@@ -1,4 +1,4 @@
-console.log('Starting App');
+console.log('Starting App.js');
 
 const fs = require('fs');
 //This says fetch all requires of 'fs' variable (string is  
@@ -9,17 +9,26 @@ const fs = require('fs');
 //at compile-time
 
 const os = require('os');
+const notes = require('./notes.js');
 
-var user = os.userInfo();
+// './' --> points to current directory
 
-fs.appendFile('greetings.txt', `Hello ${user.username}!`, function(err) {
-    //The dollar sign curly braces is 'template strings' in ES6
-    //The tick is in front of the 1 on the keyboard
-    //Inside the curly braces simply insert a variable
-    if (err) {
-        console.log('Unable to write file');
-    }
-});
+
+
+var add = notes.add(4,3);
+console.log(add);
+
+// var user = os.userInfo();
+
+// fs.appendFile('greetings.txt', `Hello ${user.username}! You are ${notes.age}`, 
+//     function(err) {
+//     //The dollar sign curly braces is 'template strings' in ES6
+//     //The tick is in front of the 1 on the keyboard
+//     //Inside the curly braces simply insert a variable
+//     if (err) {
+//         console.log('Unable to write file');
+//     }
+// });
 
 //We added the error callback function as node throws
 //error without it
